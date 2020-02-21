@@ -1,0 +1,864 @@
+
+<!Doctype HTML>
+<html lang = "en-GB">
+    <head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+
+  <!--  <header class="site-header">
+        <nav class="navbar navbar-expand-sm bg-secondary navbar-dark ">
+                <ul class="navbar-nav ">
+
+                  <li class="mr-4 nav-item active mr-4 ">
+
+                    <a class="navbar-brand mb-0 h1" href="/" style="color: yellow">eKStudio</a>
+                  </li>
+                  <li class="nav-item">
+                  <div class="navbar-nav">
+
+                      <a class="nav-item nav-link" href="/create_task">Create task</a>
+                      <a class="nav-item nav-link" href="#">Account</a>
+                      <a class="nav-item nav-link" href="/secondary">Product-Backlog  </a>
+                      <a class="nav-item nav-link" href="/logout">Logout</a>
+
+
+                  </div>
+
+                  </li>
+
+                </ul>
+                <div class="navbar-collapse ">
+                  <ul class="navbar-nav ml-auto">
+                      <li class="nav-item">
+
+                          <a class="nav-link" href="#">Hello demo</a>
+                      </li>
+
+                  </ul>
+              </div>
+              </nav>
+            </header>-->
+
+
+
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script >
+  var tem, tem2;
+  $(document).ready(function(){
+  $('li').bind('dragstart', function(event) {
+    tem = event.target.getAttribute('id');
+    event.originalEvent.dataTransfer.setData("text/plain",  event.target.getAttribute('id'));
+
+
+
+  });
+
+
+  $('ul').bind('dragover', function(event) {
+    event.preventDefault();
+  });
+
+  $('ul').bind('dragenter', function(event) {
+    $(this).addClass("over");
+  });
+
+  $('ul').bind('dragleave drop', function(event) {
+    $(this).removeClass("over");
+  });
+
+  $('li').bind('drop', function(event) {
+    return false;
+  });
+
+  $('ul').bind('drop', function(event) {
+    
+    var listitem = event.originalEvent.dataTransfer.getData("text/plain");
+    event.target.appendChild(document.getElementById(listitem));
+    event.preventDefault();
+    tem2 = event.target.getAttribute('id');
+    /*my script */
+    li_children = $(this).find('li');
+    console.log($(this).find('center').find('h5'));
+    console.log("children li " + li_children)
+    //var ul_credits = 0
+    $(li_children).each(function(){
+      sum += parseInt($(this).attr('value'),10)
+      console.log(typeof(parseInt($(this).attr('value')),10))
+      console.log(sum);
+    })
+
+
+  });
+});
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+ <style>
+
+
+
+
+
+#board div h3 {display: inline-block; width: 17%; margin: 1%; text-align: center;}
+#collapseOne2 div h3 {display: inline-block; width: 17%; margin: 1%; text-align: center;}
+#collapseOne3 div h3 {display: inline-block; width: 17%; margin: 1%; text-align: center;}
+#collapseOne4 div h3 {display: inline-block; width: 17%; margin: 1%; text-align: center;}
+#collapseOne5 div h3 {display: inline-block; width: 17%; margin: 1%; text-align: center;}
+#collapseOne6 div h3 {display: inline-block; width: 17%; margin: 1%; text-align: center;}
+/*#collapseOne7 div h3 {display: inline-block; width: 17%; margin: 1%; text-align: center;}*/
+#lion
+    {
+        display:none;
+    }
+#tiger
+    {
+        display:none;
+    }
+#mail
+    {
+        display:none;
+    }
+#changer
+    {
+        display:none;
+    }
+
+
+</style>
+<script type="text/javascript">
+  var n = document.getElementById('inp');
+  console.log(n);
+</script>
+
+<script>
+/*$(document).ready(function(){
+  var title = [$('#test').text()];
+  alert(title[0]);
+})
+
+$(document).ready(function (){
+var title1 = $('#test1').text();
+alert(title1);
+
+})*/
+/*$(document).ready(function (){
+  var arr = $('#test1').text();
+  alert(arr);
+})*/
+/*var i = 0;
+var str = '#test1'
+var lc = str.charAt(str.length-1);
+//alert(lc);
+var array = new Array(4);
+for(i=0;i<4;i++){
+  $(document).ready(function (){
+    var array = [$(str).text()];
+    console.log(array);
+  })
+}*/
+
+$(document).ready(function(){
+  var name = $('#id').text();
+  //console.log(name);
+})
+</script>
+
+
+
+    <legend class="form-group container" style="text-align: center; padding-top: 1%">CHOICE BASED CREDIT SYSTEM</legend>
+
+  <!--Accordion wrapper-->
+    <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+
+        <!-- Accordion card -->
+        <div class="card">
+
+        <!-- Card header -->
+        <div class="card-header" role="tab" id="headingOne1">
+            <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true"
+            aria-controls="collapseOne1">
+            <h5 class="mb-0" style="text-align: left;text-align:center">
+                 B.Tech CSE with DataScience Specialization <i class="fas fa-angle-down rotate-icon"></i>
+            </h5>
+            </a>
+        </div>
+
+        <!-- Card body -->
+        <div id="board">
+        <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1"
+            data-parent="#accordionEx"  >
+            <div class="card-body" >
+              <!--  <div style="width:70%;">
+                    <h3>Semester-1</h3><h3>Semester-2</h3><h3>Semester-3</h3><h3>Semester-4</h3><h3>Semester-5</h3><h3>Semester-6</h3>
+                  </div>-->
+                  <span>
+                  <ul id="todo" style = "border: 1px solid #ccc;
+                  border-radius: 5px;
+                  padding: 10px;
+                  width: 11%;
+                  margin: 0 0.5%;
+                  display: inline-block;
+                  vertical-align: top;">
+                   <center>
+<h4>Semester-1</h4>
+<h5>Credits-3</h5></center>
+<!--internal card starts-->
+<li id="todo1" value = "3"; draggable="true" style="list-style: none;
+                      padding: 5px;
+                      background: #f5f5f5;
+                      border-radius: 5px;
+                      margin: 0 0 5px;">
+
+
+                      <div class="card" style="width: auto;" >
+                          <div class="card-body">
+                            <h5 class="card-title">SVCMA</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">18cs232</h6>
+                            <p class="card-text">credits-3</p>
+
+                          </div>
+
+                        </div>
+
+                        </li>
+<!--internal card ends-->
+<!--internal card starts-->
+<li id="todo2" value = "4"; draggable="true" style="list-style: none;
+                      padding: 5px;
+                      background: #f5f5f5;
+                      border-radius: 5px;
+                      margin: 0 0 5px;">
+
+
+                      <div class="card" style="width: auto;">
+                          <div class="card-body">
+                            <h5 class="card-title">DSD</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">18cs233</h6>
+                            <p class="card-text">credits-4</p>
+
+                          </div>
+
+                        </div>
+
+                        </li>
+<!--internal card ends-->
+<!--internal card starts-->
+<li id="todo3" value = "4"; draggable="true" style="list-style: none;
+                      padding: 5px;
+                      background: #f5f5f5;
+                      border-radius: 5px;
+                      margin: 0 0 5px;">
+
+
+                      <div class="card" style="width: auto;">
+                          <div class="card-body">
+                            <h5 class="card-title">PSCP</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">18cs234</h6>
+                            <p class="card-text">credits-5</p>
+
+                          </div>
+
+                        </div>
+
+                        </li>
+<!--internal card ends-->
+<!--internal card starts-->
+<li id="todo4" value = "4"; draggable="true" style="list-style: none;
+                      padding: 5px;
+                      background: #f5f5f5;
+                      border-radius: 5px;
+                      margin: 0 0 5px;">
+
+
+                      <div class="card" style="width: auto;">
+                          <div class="card-body">
+                            <h5 class="card-title">FOCM</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">18cs234</h6>
+                            <p class="card-text">credits-2</p>
+
+                          </div>
+
+                        </div>
+
+                        </li>
+<!--internal card ends-->
+
+                  </ul></span>
+                  <span>
+
+                  <ul id="inprogress" style="border: 1px solid #ccc;
+                  border-radius: 5px;
+                  padding: 10px;
+                  width: 11%;
+                  margin: 0 0.5%;
+                  display: inline-block;
+                  vertical-align: top;">
+
+<center><h4>Semester-1</h4>
+  <h5>Credits-3</h5></center>
+                  <!--internal card starts-->
+                  <li id="inprogress1" value = "4"; draggable="true" style="list-style: none;
+                                        padding: 5px;
+                                        background: #f5f5f5;
+                                        border-radius: 5px;
+                                        margin: 0 0 5px;">
+
+
+                                        <div class="card" style="width: auto;">
+                                            <div class="card-body">
+                                              <h5 class="card-title">MVC</h5>
+                                              <h6 class="card-subtitle mb-2 text-muted">18CS2356</h6>
+                                              <p class="card-text">Credits-3</p>
+
+                                            </div>
+
+                                          </div>
+
+                                          </li>
+                  <!--internal card ends-->
+                   <!--internal card starts-->
+                   <li id="inprogress2" value = "5"; draggable="true" style="list-style: none;
+                   padding: 5px;
+                   background: #f5f5f5;
+                   border-radius: 5px;
+                   margin: 0 0 5px;">
+
+
+                   <div class="card" style="width: auto;">
+                       <div class="card-body">
+                         <h5 class="card-title">PYTHON</h5>
+                         <h6 class="card-subtitle mb-2 text-muted">18DS2358</h6>
+                         <p class="card-text">Credits-5</p>
+
+                       </div>
+
+                     </div>
+
+                     </li>
+<!--internal card ends-->
+<!--internal card starts-->
+<li id="inprogress3" value = "4"; draggable="true" style="list-style: none;
+                      padding: 5px;
+                      background: #f5f5f5;
+                      border-radius: 5px;
+                      margin: 0 0 5px;">
+
+
+                      <div class="card" style="width: auto;">
+                          <div class="card-body">
+                            <h5 class="card-title">COA</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">18CS2357</h6>
+                            <p class="card-text">Credits-3</p>
+
+                          </div>
+
+                        </div>
+
+                        </li>
+<!--internal card ends-->
+<!--internal card starts-->
+<li id="inprogress4" value = "4"; draggable="true" style="list-style: none;
+                      padding: 5px;
+                      background: #f5f5f5;
+                      border-radius: 5px;
+                      margin: 0 0 5px;">
+
+
+                      <div class="card" style="width: auto;">
+                          <div class="card-body">
+                            <h5 class="card-title">PCS</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">18CS2358</h6>
+                            <p class="card-text">Credits-2</p>
+
+                          </div>
+
+                        </div>
+
+                        </li>
+<!--internal card ends-->
+
+
+                    </ul></span><span>
+
+                    <ul id="inreview" style="border: 1px solid #ccc;
+                  border-radius: 5px;
+                  padding: 10px;
+                  width: 11%;
+                  margin: 0 0.5%;
+                  display: inline-block;
+                  vertical-align: top;">
+<center>
+<h4>Semester-3</h4>
+<h5>Credits-3</h5></center>
+                  <!--internal card starts-->
+                  <li id="inreview1" value = "100"; draggable="true" style="list-style: none;
+                                        padding: 5px;
+                                        background: #f5f5f5;
+                                        border-radius: 5px;
+                                        margin: 0 0 5px;">
+
+
+                                        <div class="card" style="width: auto;">
+                                            <div class="card-body">
+                                              <h5 class="card-title">OS</h5>
+                                              <h6 class="card-subtitle mb-2 text-muted">18cs2356</h6>
+                                              <p class="card-text">Credits-5</p>
+
+                                            </div>
+
+                                          </div>
+
+                                          </li>
+                  <!--internal card ends-->
+                  <!--internal card starts-->
+                  <li id="inreview2" value = "100"; draggable="true" style="list-style: none;
+                                        padding: 5px;
+                                        background: #f5f5f5;
+                                        border-radius: 5px;
+                                        margin: 0 0 5px;">
+
+
+                                        <div class="card" style="width: auto;">
+                                            <div class="card-body">
+                                              <h5 class="card-title">OOPS</h5>
+                                              <h6 class="card-subtitle mb-2 text-muted">18cs1254</h6>
+                                              <p class="card-text">credits-7.5</p>
+
+                                            </div>
+
+                                          </div>
+
+                                          </li>
+                  <!--internal card ends-->
+                  <!--internal card starts-->
+                  <li id="inreview3" value = "100"; draggable="true" style="list-style: none;
+                                        padding: 5px;
+                                        background: #f5f5f5;
+                                        border-radius: 5px;
+                                        margin: 0 0 5px;">
+
+
+                                        <div class="card" style="width: auto;">
+                                            <div class="card-body">
+                                              <h5 class="card-title">S.E</h5>
+                                              <h6 class="card-subtitle mb-2 text-muted">18cs1255</h6>
+                                              <p class="card-text">credits-4</p>
+
+                                            </div>
+
+                                          </div>
+
+                                          </li>
+                  <!--internal card ends-->
+                  <!--internal card starts-->
+                  <li id="inreview2" value = "100"; draggable="true" style="list-style: none;
+                                        padding: 5px;
+                                        background: #f5f5f5;
+                                        border-radius: 5px;
+                                        margin: 0 0 5px;">
+
+
+                                        <div class="card" style="width: auto;">
+                                            <div class="card-body">
+                                              <h5 class="card-title">DMS</h5>
+                                              <h6 class="card-subtitle mb-2 text-muted">18cs1254</h6>
+                                              <p class="card-text">credits-3</p>
+
+                                            </div>
+
+                                          </div>
+
+                                          </li>
+                  <!--internal card ends-->
+
+                    </ul></span><span>
+
+                    <ul id="done" style="border: 1px solid #ccc;
+                  border-radius: 5px;
+                  padding: 10px;
+                  width: 11%;
+                  margin: 0 0.5%;
+                  display: inline-block;
+                  vertical-align: top;">
+<center>
+<h4>Semester-4</h4>
+<h5>Credits-3</h5></center>
+                  <!--internal card starts-->
+                  <li id="done1" value = "100"; draggable="true" style="list-style: none;
+                                        padding: 5px;
+                                        background: #f5f5f5;
+                                        border-radius: 5px;
+                                        margin: 0 0 5px;">
+
+
+                                        <div class="card" style="width: auto;">
+                                            <div class="card-body">
+                                              <h5 class="card-title">DS</h5>
+                                              <h6 class="card-subtitle mb-2 text-muted">18cs1265</h6>
+                                              <p class="card-text">credits-5</p>
+
+                                            </div>
+
+                                          </div>
+
+                                          </li>
+                  <!--internal card ends-->
+<!--internal card starts-->
+                  <li id="done2" value = "100"; draggable="true" style="list-style: none;
+                                        padding: 5px;
+                                        background: #f5f5f5;
+                                        border-radius: 5px;
+                                        margin: 0 0 5px;">
+
+
+                                        <div class="card" style="width: auto;">
+                                            <div class="card-body">
+                                              <h5 class="card-title">EP</h5>
+                                              <h6 class="card-subtitle mb-2 text-muted">18cs2565</h6>
+                                              <p class="card-text">credits-5</p>
+
+                                            </div>
+
+                                          </div>
+
+                                          </li>
+                  <!--internal card ends-->
+                  <!--internal card starts-->
+                                    <li id="done3" value = "100"; draggable="true" style="list-style: none;
+                                                          padding: 5px;
+                                                          background: #f5f5f5;
+                                                          border-radius: 5px;
+                                                          margin: 0 0 5px;">
+
+
+                                                          <div class="card" style="width: auto;">
+                                                              <div class="card-body">
+                                                                <h5 class="card-title">AI</h5>
+                                                                <h6 class="card-subtitle mb-2 text-muted">18cs2565</h6>
+                                                                <p class="card-text">credits-6</p>
+
+                                                              </div>
+
+                                                            </div>
+
+                                                            </li>
+                                    <!--internal card ends-->
+                                    <!--internal card starts-->
+                                                      <li id="done4" value = "100"; draggable="true" style="list-style: none;
+                                                                            padding: 5px;
+                                                                            background: #f5f5f5;
+                                                                            border-radius: 5px;
+                                                                            margin: 0 0 5px;">
+
+
+                                                                            <div class="card" style="width: auto;">
+                                                                                <div class="card-body">
+                                                                                  <h5 class="card-title">CNS</h5>
+                                                                                  <h6 class="card-subtitle mb-2 text-muted">18cs2565</h6>
+                                                                                  <p class="card-text">credits-4</p>
+
+                                                                                </div>
+
+                                                                              </div>
+
+                                                                              </li>
+                                                      <!--internal card ends-->
+
+
+                    </ul></span><span>
+
+                    <ul id="export" style="border: 1px solid #ccc;
+                  border-radius: 5px;
+                  padding: 10px;
+                  width: 11%;
+                  margin: 0 0.5%;
+                  display: inline-block;
+                  vertical-align: top;">
+<center>
+<h4>Semester-5</h4>
+<h5>Credits-3</h5></center>
+                  <!--internal card starts-->
+                  <li id="export1" value = "100"; draggable="true" style="list-style: none;
+                                        padding: 5px;
+                                        background: #f5f5f5;
+                                        border-radius: 5px;
+                                        margin: 0 0 5px;">
+
+
+                                        <div class="card" style="width: auto;">
+                                            <div class="card-body">
+                                              <h5 class="card-title">dfghj</h5>
+                                              <h6 class="card-subtitle mb-2 text-muted"></h6>
+                                              <p class="card-text"></p>
+                                              <a href="#" class="card-link">g</a>
+                                              <a href="/task/1" class="card-link">Expand Post</a>
+                                            </div>
+
+                                          </div>
+
+                                          </li>
+                  <!--internal card ends-->
+                  <!--internal card starts-->
+                  <li id="export2" value = "100"; draggable="true" style="list-style: none;
+                                        padding: 5px;
+                                        background: #f5f5f5;
+                                        border-radius: 5px;
+                                        margin: 0 0 5px;">
+
+
+                                        <div class="card" style="width: auto;">
+                                            <div class="card-body">
+                                              <h5 class="card-title">dfghj</h5>
+                                              <h6 class="card-subtitle mb-2 text-muted"></h6>
+                                              <p class="card-text"></p>
+                                              <a href="#" class="card-link">g</a>
+                                              <a href="/task/1" class="card-link">Expand Post</a>
+                                            </div>
+
+                                          </div>
+
+                                          </li>
+                  <!--internal card ends-->
+
+
+
+                    </ul></span><span>
+                    <ul id="inreview" style="border: 1px solid #ccc;
+                  border-radius: 5px;
+                  padding: 10px;
+                  width: 11%;
+                  margin: 0 0.5%;
+                  display: inline-block;
+                  vertical-align: top;">
+<center>
+<h4>Semester-6</h4>
+<h5>Credits-3</h5></center>
+                  <!--internal card starts-->
+                  <li id="inreview1" value = "100"; draggable="true" style="list-style: none;
+                                        padding: 5px;
+                                        background: #f5f5f5;
+                                        border-radius: 5px;
+                                        margin: 0 0 5px;">
+
+
+                                        <div class="card" style="width: auto;">
+                                            <div class="card-body">
+                                              <h5 class="card-title">dfghj</h5>
+                                              <h6 class="card-subtitle mb-2 text-muted"></h6>
+                                              <p class="card-text"></p>
+                                              <a href="#" class="card-link">g</a>
+                                              <a href="/task/1" class="card-link">Expand Post</a>
+                                            </div>
+
+                                          </div>
+
+                                          </li>
+                  <!--internal card ends-->
+                  <!--internal card starts-->
+                  <li id="inreview2" value = "100"; draggable="true" style="list-style: none;
+                                        padding: 5px;
+                                        background: #f5f5f5;
+                                        border-radius: 5px;
+                                        margin: 0 0 5px;">
+
+
+                                        <div class="card" style="width: auto;">
+                                            <div class="card-body">
+                                              <h5 class="card-title">dfghj</h5>
+                                              <h6 class="card-subtitle mb-2 text-muted"></h6>
+                                              <p class="card-text"></p>
+                                              <a href="#" class="card-link">g</a>
+                                              <a href="/task/1" class="card-link">Expand Post</a>
+                                            </div>
+
+                                          </div>
+
+                                          </li>
+                  <!--internal card ends-->
+
+
+
+                    </ul></span><span>
+
+                    <ul id="complete" style="border: 1px solid #ccc;
+                  border-radius: 5px;
+                  padding: 10px;
+                  width: 11%;
+                  margin: 0 0.5%;
+                  display: inline-block;
+                  vertical-align: top;">
+<center>
+<h4>Semester-7</h4>
+<h5>Credits-4</h5></center>
+                  <!--internal card starts-->
+                  <li id="complete1" value = "100"; draggable="true" style="list-style: none;
+                                        padding: 5px;
+                                        background: #f5f5f5;
+                                        border-radius: 5px;
+                                        margin: 0 0 5px;">
+
+
+                                        <div class="card" style="width: auto;">
+                                            <div class="card-body">
+                                              <h5 class="card-title">dfghj</h5>
+                                              <h6 class="card-subtitle mb-2 text-muted"></h6>
+                                              <p class="card-text"></p>
+                                              <a href="#" class="card-link">g</a>
+                                              <a href="/task/1" class="card-link">Expand Post</a>
+                                            </div>
+
+                                          </div>
+
+                                          </li>
+                  <!--internal card ends-->
+
+                  <!--internal card starts-->
+                  <li id="complete2" value = "100"; draggable="true" style="list-style: none;
+                                        padding: 5px;
+                                        background: #f5f5f5;
+                                        border-radius: 5px;
+                                        margin: 0 0 5px;">
+
+
+                                        <div class="card" style="width: auto;">
+                                            <div class="card-body">
+                                              <h5 class="card-title">dfghj</h5>
+                                              <h6 class="card-subtitle mb-2 text-muted"></h6>
+                                              <p class="card-text"></p>
+                                              <a href="#" class="card-link">g</a>
+                                              <a href="/task/1" class="card-link">Expand Post</a>
+                                            </div>
+
+                                          </div>
+
+                                          </li>
+                  <!--internal card ends-->
+
+
+
+                    </ul></span><span>
+
+
+                    <ul id="final" style="border: 1px solid #ccc;
+                  border-radius: 5px;
+                  padding: 10px;
+                  width: 11%;
+                  margin: 0 0.5%;
+                  display: inline-block;
+                  vertical-align: top;">
+<center>
+<h4>Semester-8</h4>
+<h5>Credits-4</h5></center>
+                  <!--internal card starts-->
+                  <li id="final1" value = "100"; draggable="true" style="list-style: none;
+                                        padding: 5px;
+                                        background: #f5f5f5;
+                                        border-radius: 5px;
+                                        margin: 0 0 5px;">
+
+
+                                        <div class="card" style="width: auto;">
+                                            <div class="card-body">
+                                              <h5 class="card-title">dfghj</h5>
+                                              <h6 class="card-subtitle mb-2 text-muted"></h6>
+                                              <p class="card-text"></p>
+                                              <a href="#" class="card-link">g</a>
+                                              <a href="/task/1" class="card-link">Expand Post</a>
+                                            </div>
+
+                                          </div>
+
+                                          </li>
+                  <!--internal card ends-->
+                   <!--internal card starts-->
+                   <li id="final2" value = "100"; draggable="true" style="list-style: none;
+                   padding: 5px;
+                   background: #f5f5f5;
+                   border-radius: 5px;
+                   margin: 0 0 5px;">
+
+
+                   <div class="card" style="width: auto;">
+                       <div class="card-body">
+                         <h5 class="card-title">dfghj</h5>
+                         <h6 class="card-subtitle mb-2 text-muted"></h6>
+                         <p class="card-text"></p>
+                         <a href="#" class="card-link">g</a>
+                         <a href="/task/1" class="card-link">Expand Post</a>
+                       </div>
+
+                     </div>
+
+                     </li>
+<!--internal card ends-->
+
+
+
+                    </ul>
+
+            </div>
+        </div>
+        </div>
+        </div>
+
+
+<!--End of 1st accordion......................................................................................................................-->
+
+
+<!--End of 2nd accordion......................................................................................................................-->
+
+<!--End of 3rd accordion......................................................................................................................-->
+
+
+
+<!--End of 4th accordion......................................................................................................................-->
+
+
+
+<!--End of 5th accordion......................................................................................................................-->
+
+
+        </div>
+
+
+
+<!--<form method="POST" action="" enctype="multipart/form-data" >
+
+          <input type = 'text' name = 'update1', id = "lion">
+          <input type = 'text' name = 'update2', id = "tiger">
+          <input type = 'text' name="update3", id = "changer">
+          <input id = 'mail', type = "submit"></input>
+
+</form>-->
+
+
+    </body>
+        </html>
